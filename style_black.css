@@ -1,0 +1,384 @@
+body{
+	margin:0;
+	padding:126px 0 0 150px;
+	background-color: #F7F7F7;
+ }
+* html body{
+	overflow:hidden;
+ } 
+ /* -----------------------  фиксированные поля страницы  ----------------------*/
+ div#header{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:110px;
+ }
+ div#left-sidebar{
+       position:absolute;
+       top:126px;
+       left:0;
+       width:150px;
+       height:100%;
+       z-index:1000;       
+       background:  #000000 url(images/themes/black/back_menu_left.png) repeat-y left;
+ }
+ @media screen{
+  body>div#header{
+   position:fixed;
+  }
+  body>div#left-sidebar{
+   position:fixed;
+  }
+ }
+ * html body{
+  overflow:hidden;
+ } 
+ * html div#content{
+	height:100%;
+	overflow:auto;
+ }
+ 
+ /* ---------------------------------  горизонтальное МЕНЮ  ------------------------------------*/
+.solidblockmenu{
+	position:relative;
+	font: bold 13px Arial, Helvetica, sans-serif;
+	width: 100%;
+	background: url("images/themes/black/back_menu.png") repeat;
+	top: 100px;
+	left:0px;
+	padding: 5px 150px;
+	margin: 0;
+}
+.solidblockmenu li{
+  display: inline;
+}
+.solidblockmenu li a{
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-right: 0px solid white;
+}
+.solidblockmenu li a:visited{
+
+}
+.solidblockmenu li a:hover, .solidblockmenu li .current{
+  color: black;
+  background: url("images/themes/black/sel_menu.png") repeat;
+}
+
+ /* ---------------------------------  вертикальное МЕНЮ  ------------------------------------*/
+.left_menu ul{
+  position:relative;
+  font: 12px Arial, Helvetica, sans-serif;
+  width: 150px;	
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.left_menu li{
+  margin-left:4px;
+  padding: 2px 2px 2px 4px;
+}
+.left_menu li a, .left_menu li a:visited{
+  color: white;
+  display:block;
+  text-decoration: none;
+}
+.left_menu li ul {
+  visibility: hidden;
+  position: absolute;
+  left: 120px;
+  top: 0px;
+  width:150px;
+  background: #464644;
+}
+.left_menu li:hover{
+     position: relative;
+     color: black; 
+     background:  #FFFFFF;
+}
+.left_menu li:hover > ul {
+     visibility: visible;
+}
+.left_menu li:hover > a {
+     color: black; 
+     background:  #FFFFFF;
+}
+
+.left_menu table {
+     position:absolute;
+     border-collapse:collapse;
+     top:0px;
+     left:0px;
+}
+/* напишем стиль ссылок при наведении для IE младше 7-ого */
+* html .left_menu a:hover {
+     color: black; 
+     background:  #FFFFFF url(images/themes/black/back_menu_left_sel.png) repeat-y left;
+/* обязательно нужно указать относительное позиционирование */
+     position:relative;
+}
+/* Для IE младше 7-ой версии вручную обработаем каждый уровень */
+/* скрываем третий и последующие уровни, когда курсор наведен на первый уровень */
+.left_menu ul a:hover ul ul {
+   visibility:hidden; 
+}
+/* показываем второй уровень, при наведении на первый */
+.left_menu ul a:hover ul {
+   visibility:visible;
+}
+
+
+/* ----------------------------------- ФИЛьТР ------------------------------------*/
+.filter_show {
+	background: url('images/themes/black/filter.png');
+    display: block;
+    width: 50px; 
+    height: 50px;   
+  }
+.filter_show:hover {
+    background-position: 0px -50px; /* Смещение вверх по вертикали */
+}
+.filter_color{
+    background-color:#666666;
+}
+
+/*------------------------------------ Выбор и сортировка полей-------------------------------*/
+.field_select {
+	background: url('images/themes/black/sort.png');
+    display: block; 
+    width: 42px; 
+    height: 50px;  
+  }
+.field_select:hover {
+    background-position: 0px -50px; /* Смещение вверх по вертикали */
+}
+
+/*------------------------------------ Имя таблицы-------------------------------*/
+.table_name{
+	font: 28px Arial, Helvetica, sans-serif;
+	padding: 10px 10px;  
+  }
+  
+/*------------------------------------ Стиль paging-------------------------------*/  
+div#paging{
+	font: 13px Arial, Helvetica, sans-serif;
+	padding: 10px 10px;
+	text-align:right;
+	clear:both; 
+  }
+div#paging a {
+    text-decoration:none;
+	color: #666666;
+  }
+div#paging a:visited {
+    text-decoration:none;
+	color: #666666;
+  }  
+/*------------------------------------ Стиль add_row-------------------------------*/  
+a#add_row{
+	background: url('images/themes/black/add_row.png');
+    display: block; 
+    width: 50px; 
+    height: 50px;   
+  }
+a#add_row:hover {
+    background-position: 0px -50px; /* Смещение вверх по вертикали */
+}
+/*------------------------------------ Стиль export_excel-------------------------------*/  
+a#export_excel{
+	background: url('images/themes/black/export_excel.png');
+    display: block; 
+    width: 46px; 
+    height: 50px;   
+  }
+a#export_excel:hover {
+    background-position: 0px -50px; /* Смещение вверх по вертикали */
+}
+
+/*---------------------------------- подписи кнопок add, export, filter, select fields ----------------------------------------*/
+.hint_button {
+    font: 10px Arial, Helvetica, sans-serif; 
+	color: #666666;
+}
+
+  
+/*------------------------------------ Стиль таблицы-------------------------------*/
+	.dataTable { border-collapse: collapse; border:1px solid black; width: 100%; font: 11px Arial, Helvetica, sans-serif;}
+	.dataTable td, .dataTable th {border: 1px solid black; padding: 0px 4px; margin:0px;}
+	.dataTable thead th { background-color: #333333; color: white; font-weight:bold; text-align:left;}
+	.dataTable thead a {text-decoration:none; color:white; }
+	.dataTable thead a:hover { text-decoration: underline;}
+	.dataTable tbody tr{ background-color: #CCCCCC; color: black; text-align:center;}
+		
+	/* Firefox has missing border bug! https://bugzilla.mozilla.org/show_bug.cgi?id=410621 */
+	/* Firefox 2 */
+	html>/**/body .dataTable, x:-moz-any-link {margin:0px;}
+	/* Firefox 3 */
+	html>/**/body .dataTable, x:-moz-any-link, x:default {margin:0px}
+/*--------------------------------------------------------------------------------------*/
+/*------------------------------------ Стиль таблицы-------------------------------*/
+.Table { border-collapse: collapse; border:1px solid black; width: 800px; font: 12px Arial, Helvetica, sans-serif;}
+.Table td, .dataTable th {border: 1px solid black; padding: 0px 4px; margin:0px; }
+.Table thead th { background-color:gray; color: white; font-weight:bold; text-align:left; border:1px solid black;  padding: 0px 4px; text-align:center;}		
+.Table tbody { background-color:#CDDBEB; color: black; text-align:center;}
+.Table tbody td a {text-decoration:underline; color:black; }		
+/*------------------- разделение полей таблиц цветом в field_selecte--------------------*/
+ .fld_sel1{
+	background-color: #CCCCCC;
+ }
+ .fld_sel2{
+	background-color: #33FF99;
+ }
+ 
+ /*-------------------- CALENDAR -------------------------------------------------------*/
+
+ /* Default attributes of DIV containing table container for entire calendar. */
+.div-style {
+	z-index: +3001;
+}
+
+/* Default attributes used in calendar title (month and year columns).*/
+.title-style {
+	padding: 0px;
+	font-family: arial;
+	font-size: 12px;
+	background-color: #f8c200;
+}
+
+/* Default attributes used in calendar title background.*/
+.title-background-style {
+        background-color: #f8c200; 
+}
+
+/* Default attributes of calendar body (weekday titles and numbers). */
+.body-style {
+	padding: 0px;
+	background-color: #FFFFFF;
+	font-family: verdana;
+	font-size: 10px;
+}
+
+/* Attributes of current day in calendar body. */
+.over {
+	background-color: #559bff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* Attributes of end-of-week days (Sundays) in calendar body. */
+.weekend {
+	background-color: #909090;
+	text-decoration: none;
+}
+
+/* Attributes of all other days in calendar body. */
+.day {
+	background-color: #a7dff7;
+	text-decoration: none;
+}
+
+/* Attributes of border around selected day in calendar body. */
+.today {
+	background-color: #e28a00;
+	font-weight: bold;
+}
+
+
+/*----------------------------------------- Всплывающие окна ---------------------------------*/
+/* jqModal base Styling courtesy of;
+  Brice Burgess <bhb@iceburg.net> */
+
+/* The Window's CSS z-index value is respected (takes priority). If none is supplied,
+  the Window's z-index value will be set to 3000 by default (in jqModal.js). You
+  can change this value by either;
+    a) supplying one via CSS
+    b) passing the "zIndex" parameter. E.g.  (window).jqm({zIndex: 500}); */
+  
+.jqmWindow {
+    display: none;
+    
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    
+    margin-left: -300px;
+    width: auto;
+	height:300px;
+    
+    background-color: #EEE;
+    color: #333;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.jqmOverlay { background-color: #000; }
+
+/* Fixed posistioning emulation for IE6
+     Star selector used to hide definition from browsers other than IE6
+     For valid CSS, use a conditional include instead */
+* html .jqmWindow {
+     position: absolute;
+     top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(17 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+a#close{
+	background: url('images/close.png');
+	display: block;
+	width: 16px;
+	height: 16px;	
+}
+
+/*----------------------------------------- НОВОСТИ ---------------------------------*/
+
+.news_date{
+    font: 12px Arial, Helvetica, sans-serif; 
+	color: #666666;
+	padding-bottom: 10px;
+}
+.news_title{
+    font: 18px Arial, Helvetica, sans-serif;
+	padding-bottom: 15px;
+}
+.news_text{
+    font: 13px Arial, Helvetica, sans-serif ;
+	padding-bottom: 20px;
+}
+.news_details a{
+    font: 12px Arial, Helvetica, sans-serif ;
+	color: #666666;
+	text-decoration:none;
+}
+
+/*----------------------------------------- EDIT & ADD ---------------------------------*/
+
+.text{
+    font: 13px Arial, Helvetica, sans-serif;   
+}
+.text a{
+    text-decoration:none;
+	color: black;
+}
+.comment{
+    font: 10px Arial, Helvetica, sans-serif; 
+	color: #666666;
+}
+.select_box{
+	width: 250px; 
+	font: 11px Arial, Helvetica, sans-serif;   
+}
+.edit_box{
+    width: 250px; 
+	font: 12px Arial, Helvetica, sans-serif;
+}
+.table_fon{
+	background-color: #E5E5E5;     
+}
+.error_fon{
+    background-color: #990000;
+}
+.no_edit{
+    font: 12px Arial, Helvetica, sans-serif; 
+	color: #666666;
+	padding-bottom: 10px;
+}
